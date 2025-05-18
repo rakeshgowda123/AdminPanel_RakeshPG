@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 30 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --success: 142 72% 50%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply antialiased bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+
+  button, input, select, textarea {
+    @apply font-normal;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary))/90];
+  }
+  
+  .btn-secondary {
+    @apply bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--secondary))/90];
+  }
+  
+  .btn-outline {
+    @apply border border-[hsl(var(--border))] bg-transparent hover:bg-[hsl(var(--muted))];
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-[hsl(var(--muted))];
+  }
+  
+  .btn-lg {
+    @apply h-11 px-8 py-2;
+  }
+  
+  .btn-md {
+    @apply h-10 py-2 px-4;
+  }
+  
+  .btn-sm {
+    @apply h-9 px-3 rounded-md;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-md border border-[hsl(var(--border))] bg-transparent px-3 py-2
+      text-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-transparent
+      file:border-0 file:bg-transparent file:text-sm file:font-medium
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .icon-button {
+    @apply h-10 w-10 inline-flex items-center justify-center rounded-full 
+      bg-transparent hover:bg-[hsl(var(--muted))] transition-colors
+      focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply rounded-lg border border-[hsl(var(--border))] bg-white overflow-hidden shadow-sm;
+  }
+  
+  .card-header {
+    @apply p-6 border-b border-[hsl(var(--border))];
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  .card-footer {
+    @apply p-6 border-t border-[hsl(var(--border))];
+  }
+  
+  .alert {
+    @apply p-4 rounded-md border;
+  }
+  
+  .alert-error {
+    @apply bg-[hsl(var(--error))/10] border-[hsl(var(--error))/20] text-[hsl(var(--error))];
+  }
+  
+  .alert-success {
+    @apply bg-[hsl(var(--success))/10] border-[hsl(var(--success))/20] text-[hsl(var(--success))];
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply bg-[hsl(var(--primary))/10] text-[hsl(var(--primary))];
+  }
+  
+  .badge-secondary {
+    @apply bg-[hsl(var(--secondary))/10] text-[hsl(var(--secondary))];
+  }
+  
+  .badge-outline {
+    @apply border border-[hsl(var(--border))] bg-transparent;
+  }
+
+  .separator {
+    @apply h-px w-full bg-[hsl(var(--border))];
+  }
+}
